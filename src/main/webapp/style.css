@@ -1,0 +1,280 @@
+@import url("common.css");
+
+/* -----------------------------top画面-------------------------------- */
+/* スライドショー */
+.top-slide-container {
+	width: 100%;
+    position: relative; /*親要素にrelative*/
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.top-slide-wrapper {
+  display: flex;
+  animation: slide-flow 15s infinite linear 1s both;
+}
+
+.top-slide{
+  width: 300px;
+  object-fit:cover;
+  border: 1px solid #ddd;
+}
+
+.top-slide-wrapper::after{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, .5);
+}
+
+/* スライドショーの上に重ねるコンテンツ */
+.top-overlay-content {
+    position: absolute;
+    top: 50%; /* 縦方向で中央揃え */
+    left: 50%; /* 横方向で中央揃え */
+    transform: translate(-50%, -50%); /* 中央位置調整 */
+    text-align: center; /* 中央揃え */
+    color: white;
+    z-index: 20; /* スライドショーの上に表示 */
+}
+
+.top-logo {
+    width: 100px; /* ロゴの幅 */
+    height: auto; /* アスペクト比を維持 */
+    max-width: 100px; /* 画像の最大幅 */
+}
+
+.top-title {
+    width: 200px; /* ロゴの幅 */
+    height: auto; /* アスペクト比を維持 */
+    max-width: 200px; /* 画像の最大幅 */
+    margin-bottom: 10px; /* ロゴとテキストの間に余白を追加 */
+}
+
+/* スライドショーが隠れないよう z-index の設定 */
+.top-slide-container {
+    z-index: 10;
+}
+
+@keyframes slide-flow {
+   0% {transform: translateX(0);}
+ 100% {transform: translateX(-100%);}
+}
+
+.top-serch-button,.top-start-button,.top-login-button {
+    display: block;
+    margin: 20px auto;     /* 上下に余白、中央揃え */
+    width: 100%;            /* ロゴの幅を調整 */
+    max-width: 200px; /* 画像の最大幅 */
+    height: auto;
+}
+
+.top-naiyou1-image {
+    display: block;
+    margin: 20px auto;     /* 上下に余白、中央揃え */
+    width: 100%;            /* ロゴの幅を調整 */
+    max-width: 300px; /* 画像の最大幅 */
+    height: auto;
+}
+
+.top-font-text {
+	text-align: center;
+	font-size: 15px;
+	color: #534741;	
+}
+
+/* ログインフォームのスタイル */
+.login-container {
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    padding: 60px 15px 15px 15px; /* トップバー分の余白を確保 */
+    justify-content: center; /* 横方向に中央揃え */
+    align-items: center;     /* 縦方向に中央揃え */
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* テキストとテキストボックスの横並び */
+.form-group {
+    display: flex;
+    align-items: center;     /* 縦方向に中央揃え */
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-right: 10px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.form-group input {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    padding: 10px;
+    background: #5d4949;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center; /* 横方向に中央揃え */
+}
+
+.login-container button:hover {
+    background: #0056b3;
+}
+
+/* エラーメッセージのスタイル */
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* .HOMEロゴ */
+.home-img {
+    display: block;
+    margin: 20px auto;     /* 上下に余白、中央揃え */
+    width: 100%;            /* ロゴの幅を調整 */
+    max-width: 180px; /* 画像の最大幅 */
+    height: auto;          /* アスペクト比を維持 */
+    padding: 60px 15px 15px 15px; /* トップバー分の余白を確保 */
+}
+
+/*フォーム全体を中央へ*/
+#form1{
+  display: flex;
+  justify-content: center; /*中央へ固定*/	
+  height:50px;/*高さ*/	
+}
+/*入力フォーム*/
+#sbox1{
+  width:220px;/*横幅*/
+  padding:0 15px;/*プレースホルダーの位置調整*/
+  border-radius:4px 0 0 4px;/*左側の角を少し丸める*/		
+  background:#fff;/*検背景カラー*/
+  border:none;/*枠線を消す*/ 
+  outline:0;/*クリック時の青い枠線消す*/
+  margin-right:10px;	
+  border-radius:10px;
+}
+/*検索ボタン*/
+#sbtn1{
+  width:50px;/*横幅*/ 
+  border-radius:0 4px 4px 0;/*右側の角を少し丸める*/ 
+  background:#965B36;/*背景カラー*/ 
+  border:none;/*枠線を消す*/ 
+  color:#fff;/*テキストカラー*/ 
+  font-size:16px;/*フォントサイズ指定*/ 
+  cursor: pointer;/*マウスを乗せると指差しポインターになる*/
+  border-radius:10px;
+}
+/*検索ボタンマウスオーバー時*/
+#sbtn1:hover {
+  background: #92dbff;/*背景カラー変更*/
+}
+
+.home-text{
+    text-align: right;
+}
+/* 横スクロール */
+.home-scroll{
+    overflow: auto;
+    white-space: pre;
+    margin-bottom: 20px; /* ロゴとテキストの間に余白を追加 */
+}
+
+.home-scroll::-webkit-scrollbar {
+    height: 10px;
+    width: auto;
+}
+.home-scroll::-webkit-scrollbar-thumb {
+    background-color:#5d4949;
+    border-radius: 10px;
+} 
+.homescroll::-webkit-scrollbar-track {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.home-footermenu {
+	position: fixed;
+	bottom: 0;
+	height: 100px;
+}
+        
+            
+#form1{
+  display: flex;
+  justify-content: center; /*中央へ固定*/	
+  height:50px;/*高さ*/	
+}
+/*入力フォーム*/
+#sbox1{
+  width:220px;/*横幅*/
+  height: 40px;
+  padding:0 15px;/*プレースホルダーの位置調整*/		
+  background:#fff;/*検背景カラー*/
+  border:none;/*枠線を消す*/ 
+  outline:0;/*クリック時の青い枠線消す*/
+  margin-right:10px;	
+  border-radius:10px;
+}
+/*検索ボタン*/
+#sbtn2{
+  width:40px;/*横幅*/
+  height: 40px; 
+  border-radius:50%;/*右側の角を少し丸める*/ 
+  background:#965B36;/*背景カラー*/ 
+  border:none;/*枠線を消す*/ 
+  color:#fff;/*テキストカラー*/ 
+  font-size:16px;/*フォントサイズ指定*/ 
+  cursor: pointer;/*マウスを乗せると指差しポインターになる*/
+}
+/*検索ボタンマウスオーバー時*/
+#sbtn1:hover {
+  background: #92dbff;/*背景カラー変更*/
+}
+
+
+/*地図のcss*/
+body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0; /* 背景色 */
+        }
+
+        /* 地図の表示エリア */
+#mapContainer {
+            width: 100%;  /* 地図の横幅 */
+            height: 100%; /* 地図の高さ */
+            margin: 20px; /* 余白を少し取る */
+            border: 2px solid #ccc; /* オプション: ボーダーを追加 */
+            border-radius: 8px; /* オプション: 角を丸くする */
+        }
+
+#search {
+    z-index: 99999;
+    position: absolute;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
