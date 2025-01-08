@@ -1,4 +1,5 @@
 
+
 <!--ゆうな用プロジェクト-->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -33,17 +34,21 @@
         </div>
     </header>
     <main>
-
+<div class="search-container">
+<img src="image/home.png" alt="ロゴ" class="home-img">
 <!-- 検索フォーム -->
 <form action="ShopSearch" method="post">
     <!-- 複数タグを入力するフィールド -->
     <input type="text" name="keyword" id="keyword" placeholder="選択したタグが表示されます" readonly style="display:none;" />
-  </p>
   
-  <!-- タグのリスト表示 -->
-  <p>選択したタグ:<div id="tagList"></div>
-  <br>※タグをクリックすると選択解除されます。</p>
+  <div class="tag-screen">
   
+  <!-- タグのリスト表示 
+  <label>選択中のタグ:</label>-->
+  <div class="choise-list">
+  <div id="tagList"></div>
+  </div>
+  <button id="sbtn2" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
 
 <div class="tagchoice">
   <img src="image/coffee.png" alt="コーヒー" class="checkbox-img" onclick="addKeyword('コーヒー')">
@@ -71,10 +76,13 @@
   <img src="image/midnight_fin.png" alt="深夜まで" class="checkbox-img" onclick="addKeyword('深夜まで')">
 </div>
 
-<button id="sbtn2" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+</div>
+
+
   <!-- <p><input type="submit" value="検索" /></p> -->
 
 </form>
+</div>
 
 <!-- エラーメッセージを表示 -->
 <% String failureMessage = (String) request.getAttribute("errorMessage"); %>
@@ -82,9 +90,10 @@
   <div><%= failureMessage %></div>
 <% } %>
 
-			<a href="CafeHistoryList">履歴表示</a>
+			<a href="CafeHistoryList" class="history-btn">閲覧履歴一覧へ</a>
+			<a href="#" class="bm-btn">ブックマーク一覧へ</a>
 			
-			<div class="home-footermenu">
+			<!--<div class="home-footermenu">
 				<a href="like" class="like-link">
 				<img src="image/home.png" alt="ロゴ" class="home-img">
 				</a>
@@ -93,9 +102,9 @@
 				</a>
 			</div>
             </main>
-    <footer class="footer">
+     <footer class="footer">
         <p>&copy; 2024 モバイルファーストサイト</p>
-    </footer>
+    </footer> -->
     </div>
 	</div>
 	</div>
