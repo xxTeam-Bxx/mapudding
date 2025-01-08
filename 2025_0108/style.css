@@ -182,7 +182,11 @@ border-radius: 10px
 }
 
 /* -----------home---------------------------------------------- */
-/* .HOMEロゴ */
+
+.search-container{
+	padding: 30px;
+    border-radius: 10px;
+}
 
 .home-img {
     display: block;
@@ -190,7 +194,23 @@ border-radius: 10px
     width: 100%;            /* ロゴの幅を調整 */
     max-width: 180px; /* 画像の最大幅 */
     height: auto;          /* アスペクト比を維持 */
-    padding: 60px 15px 15px 15px; /* トップバー分の余白を確保 */
+}
+/*
+.tag-screen{
+	background-color: #FFF;
+	padding: 30px;
+	border-radius: 10px
+}
+*/
+.choise-list{
+	background-color: #FFF;
+	padding: 10px;
+	border-radius: 10px;
+	border: 3px solid #965B36;
+}
+
+.choise-list label{
+	padding: 5px;
 }
 
 .checkbox-img{
@@ -201,7 +221,7 @@ border-radius: 10px
 #tagList {
     display: flex;             /* 横並びにするためにflexboxを使用 */
     flex-wrap: wrap;           /* タグが画面幅を超えたら折り返す */
-    gap: 10px;                 /* タグ間のスペース */
+    gap: 5px;                 /* タグ間のスペース */
 }
 
 #tagList div {
@@ -219,7 +239,6 @@ border-radius: 10px
     padding:0;
     margin:0;
     border:0;
-    line-height:0;
     overflow:visible;
     cursor:pointer;
 }
@@ -228,6 +247,8 @@ border-radius: 10px
 #sbtn2{
   width:40px;/*横幅*/
   height: 40px; 
+  margin-top:10px;
+  margin-bottom:10px;
   border-radius:50%;/*右側の角を少し丸める*/ 
   background:#965B36;/*背景カラー*/ 
   border:none;/*枠線を消す*/ 
@@ -239,35 +260,70 @@ border-radius: 10px
 .home-text{
     text-align: right;
 }
-/* 横スクロール */
-.home-scroll{
-    white-space: pre;
-    margin-bottom: 20px; /* ロゴとテキストの間に余白を追加 */
-    overflow: auto;
+
+.history-btn {
+	font-family : inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin:0 auto;
+    margin-bottom: 10px;
+    padding: .4em 1em;
+    border: none;
+    border-radius: 25px;
+    background-color: #965b36;
+    color: #fff;
+    font-size: 1em;
+    text-decoration:none;
 }
 
-.home-scroll::-webkit-scrollbar {
-    height: 10px;
-    width: auto;
+.history-btn::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: '';
 }
-.home-scroll::-webkit-scrollbar-thumb {
-    background-color:#5d4949;
-    border-radius: 10px;
-} 
-.homescroll::-webkit-scrollbar-track {
-    background-color: #ccc;
-    border-radius: 10px;
+
+.history-btn:hover {
+    background-color: #864b26;
+}
+
+.bm-btn {
+	font-family : inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin:0 auto;
+    padding: .4em 1em;
+    border: none;
+    border-radius: 25px;
+    background-color: #965b36;
+    color: #fff;
+    font-size: 1em;
+    text-decoration:none;
+}
+
+.bm-btn::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: '';
+}
+
+.bm-btn:hover {
+    background-color: #864b26;
 }
 
 .home-footermenu {
 	position: fixed;
 	bottom: 0;
 	height: 100px;
-}
-
-/* ---------検索結果画面----------------------------------------------------------- */
-
-.shop-img{
-	
-	
 }
