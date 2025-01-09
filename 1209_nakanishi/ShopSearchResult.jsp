@@ -51,39 +51,45 @@
   
   <!-- タグのリスト表示 
   <label>選択中のタグ:</label>-->
+  <div class="search-box">
   <div class="choise-list">
   <div id="tagList"></div>
   </div>
   <button id="sbtn2" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-
-<div class="tagchoice">
-  <img src="image/coffee.png" alt="コーヒー" class="checkbox-img" onclick="addKeyword('コーヒー')">
-  <img src="image/cheese.png" alt="チーズ" class="checkbox-img" onclick="addKeyword('チーズ')">
-  <img src="image/macha.png" alt="	抹茶" class="checkbox-img" onclick="addKeyword('抹茶')">
-  <img src="image/pafe.png" alt="	パフェ" class="checkbox-img" onclick="addKeyword('パフェ')">
-  <img src="image/pancake.png" alt="パンケーキ" class="checkbox-img" onclick="addKeyword('パンケーキ')">
-  <img src="image/pudding.png" alt="プリン" class="checkbox-img"onclick="addKeyword('プリン')">
-  <img src="image/scorn.png" alt="スコーン" class="checkbox-img"onclick="addKeyword('スコーン')">
-  <img src="image/waff.png" alt="ワッフル" class="checkbox-img"onclick="addKeyword('ワッフル')">
+  </div>
   
-  <img src="image/kokura.png" alt="	小倉" class="checkbox-img" onclick="addKeyword('小倉')">
-  <img src="image/moji.png" alt="	門司" class="checkbox-img"onclick="addKeyword('門司')">
-  <img src="image/mojiko.png" alt="門司港" class="checkbox-img" onclick="addKeyword('門司港')">
-  <img src="image/shimonoseki.png" alt="	下関" class="checkbox-img" onclick="addKeyword('下関')">
-  <img src="image/tobata.png" alt="戸畑" class="checkbox-img" onclick="addKeyword('戸畑')">
-  <img src="image/hakata.png" alt="博多" class="checkbox-img" onclick="addKeyword('博多')">
-  
-  <img src="image/morning.png" alt="朝から" class="checkbox-img" onclick="addKeyword('朝から')">
-  <img src="image/noon.png" alt="昼から" class="checkbox-img" onclick="addKeyword('昼から')">
-  <img src="image/evning.png" alt="夕方から" class="checkbox-img" onclick="addKeyword('夕方から')">
-  <img src="image/night.png" alt="夜から" class="checkbox-img" onclick="addKeyword('夜から')">
-  <img src="image/evening_fin.png" alt="夕方まで" class="checkbox-img" onclick="addKeyword('夕方まで')">
-  <img src="image/night_fin.png" alt="夜まで" class="checkbox-img" onclick="addKeyword('夜まで')">
-  <img src="image/midnight_fin.png" alt="深夜まで" class="checkbox-img" onclick="addKeyword('深夜まで')">
-</div>
+<details class="accordion-004">
+    <summary>メニュー</summary>
+    <img src="image/coffee.png" alt="コーヒー" class="checkbox-img" onclick="addKeyword('コーヒー')">
+    <img src="image/cheese.png" alt="チーズ" class="checkbox-img" onclick="addKeyword('チーズ')">
+    <img src="image/macha.png" alt="	抹茶" class="checkbox-img" onclick="addKeyword('抹茶')">
+    <img src="image/pafe.png" alt="	パフェ" class="checkbox-img" onclick="addKeyword('パフェ')">
+    <img src="image/pancake.png" alt="パンケーキ" class="checkbox-img" onclick="addKeyword('パンケーキ')">
+    <img src="image/pudding.png" alt="プリン" class="checkbox-img"onclick="addKeyword('プリン')">
+    <img src="image/scorn.png" alt="スコーン" class="checkbox-img"onclick="addKeyword('スコーン')">
+    <img src="image/waff.png" alt="ワッフル" class="checkbox-img"onclick="addKeyword('ワッフル')">
+</details>
+<details class="accordion-004">
+    <summary>駅</summary>
+    <img src="image/kokura.png" alt="	小倉" class="checkbox-img" onclick="addKeyword('小倉')">
+    <img src="image/moji.png" alt="	門司" class="checkbox-img"onclick="addKeyword('門司')">
+    <img src="image/mojiko.png" alt="門司港" class="checkbox-img" onclick="addKeyword('門司港')">
+    <img src="image/shimonoseki.png" alt="	下関" class="checkbox-img" onclick="addKeyword('下関')">
+    <img src="image/tobata.png" alt="戸畑" class="checkbox-img" onclick="addKeyword('戸畑')">
+    <img src="image/hakata.png" alt="博多" class="checkbox-img" onclick="addKeyword('博多')">
+</details>
+<details class="accordion-004">
+    <summary>時間</summary>
+    <img src="image/morning.png" alt="朝から" class="checkbox-img" onclick="addKeyword('朝から')">
+    <img src="image/noon.png" alt="昼から" class="checkbox-img" onclick="addKeyword('昼から')">
+    <img src="image/evning.png" alt="夕方から" class="checkbox-img" onclick="addKeyword('夕方から')">
+    <img src="image/night.png" alt="夜から" class="checkbox-img" onclick="addKeyword('夜から')">
+    <img src="image/evening_fin.png" alt="夕方まで" class="checkbox-img" onclick="addKeyword('夕方まで')">
+    <img src="image/night_fin.png" alt="夜まで" class="checkbox-img" onclick="addKeyword('夜まで')">
+    <img src="image/midnight_fin.png" alt="深夜まで" class="checkbox-img" onclick="addKeyword('深夜まで')">
+</details>
 
 </div>
-
 
   <!-- <p><input type="submit" value="検索" /></p> -->
 
@@ -94,6 +100,11 @@
         List<String> storeNames = (List<String>) session.getAttribute("storeNames"); 
         if (storeNames != null && !storeNames.isEmpty()) {
     %>
+    
+    <h2 class="heading-33">
+    <span>検索結果</span>
+    </h2>
+
     <div class="result-screen">
         <!-- <label>検索結果</label> -->
         <% for (String name : storeNames) { %>
@@ -112,8 +123,6 @@
     
     
     </div>
-    
-    <div class="page_top"><a href="#top"></a></div>
     
     </main>
     <!-- <footer class="footer">
