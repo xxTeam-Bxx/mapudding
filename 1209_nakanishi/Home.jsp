@@ -1,6 +1,3 @@
-
-
-
 <!--ゆうな用プロジェクト-->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -46,12 +43,15 @@
   
   <!-- タグのリスト表示 
   <label>選択中のタグ:</label>-->
+  <div class="search-box">
   <div class="choise-list">
   <div id="tagList"></div>
   </div>
   <button id="sbtn2" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </div>
 
 <div class="tagchoice">
+  <div class="tag-txt"><label>メニュー:</label></div>
   <img src="image/coffee.png" alt="コーヒー" class="checkbox-img" onclick="addKeyword('コーヒー')">
   <img src="image/cheese.png" alt="チーズ" class="checkbox-img" onclick="addKeyword('チーズ')">
   <img src="image/macha.png" alt="	抹茶" class="checkbox-img" onclick="addKeyword('抹茶')">
@@ -60,14 +60,18 @@
   <img src="image/pudding.png" alt="プリン" class="checkbox-img"onclick="addKeyword('プリン')">
   <img src="image/scorn.png" alt="スコーン" class="checkbox-img"onclick="addKeyword('スコーン')">
   <img src="image/waff.png" alt="ワッフル" class="checkbox-img"onclick="addKeyword('ワッフル')">
-  
+  </div>
+<div class="tagchoice">
+  <div class="tag-txt"><label>駅:</label></div>
   <img src="image/kokura.png" alt="	小倉" class="checkbox-img" onclick="addKeyword('小倉')">
   <img src="image/moji.png" alt="	門司" class="checkbox-img"onclick="addKeyword('門司')">
   <img src="image/mojiko.png" alt="門司港" class="checkbox-img" onclick="addKeyword('門司港')">
   <img src="image/shimonoseki.png" alt="	下関" class="checkbox-img" onclick="addKeyword('下関')">
   <img src="image/tobata.png" alt="戸畑" class="checkbox-img" onclick="addKeyword('戸畑')">
   <img src="image/hakata.png" alt="博多" class="checkbox-img" onclick="addKeyword('博多')">
-  
+  </div>
+<div class="tagchoice">
+  <div class="tag-txt"><label>時間:</label></div>
   <img src="image/morning.png" alt="朝から" class="checkbox-img" onclick="addKeyword('朝から')">
   <img src="image/noon.png" alt="昼から" class="checkbox-img" onclick="addKeyword('昼から')">
   <img src="image/evning.png" alt="夕方から" class="checkbox-img" onclick="addKeyword('夕方から')">
