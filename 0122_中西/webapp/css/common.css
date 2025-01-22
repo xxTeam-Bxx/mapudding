@@ -1,0 +1,179 @@
+
+body {
+	font-family: "Kiwi Maru";
+    margin: 0;
+    line-height: 1.6;
+    background-image: url('../image/haikei 1.png'); /* ここが画像のパス */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxA{
+	display: flex;
+	width: 100%;
+    height: 100vh; /* ブラウザの高さに合わせる */
+}
+
+.box1,.box3{
+	width: 100%;
+    box-sizing: border-box;
+}
+
+.box2{
+	width: 375px;
+    box-sizing: border-box;
+}
+
+.sp{
+	width: 375px;
+    height: 100vh; /* ブラウザの高さに合わせる */
+    background-color: #FFF0A2;
+    overflow-y: auto;    /* 縦スクロールを有効にする */
+    -ms-overflow-style: none; /* IE、旧Edge用 */
+    scrollbar-width: none; /* Firefox用 */
+}
+
+.sp::-webkit-scrollbar {
+    display: none; /* Chrome、Safari、Edge用 */
+}
+
+.sp-content{
+	display: flex;
+	width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1; /* スペースを埋める */
+    
+}
+
+/* ヘッダー */
+.header {
+	display: flex;
+	top: 0;
+    left: 0;
+    padding: 15px 20px;
+    width: 100%;
+    height: 60px; /* トップバーの高さ */
+    background-color: #965B36;
+    color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 200; /* 高い値を設定して最前面に表示 */
+}
+
+/* トップバーのロゴ画像のスタイル */
+.top-bar-logo {
+    height: 20px;          /* 高さを調整してバー内に収める */
+    width: auto;           /* アスペクト比を維持 */
+}
+
+/* ハンバーガーメニューのデザイン */
+.hamburger-menu {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+main{
+	width:375px;
+	
+}
+
+/* メニュー */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: right 0.3s ease;
+    z-index: 100;
+    padding-top: 60px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 15px;
+    text-align: center;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* メニューが開いた時のスタイル */
+.menu.open {
+    right: 0;
+}
+
+/* ナビゲーションバー */
+.nav-box {
+	height:100vh;
+    list-style: none;
+}
+
+.nav-box nav {
+	position:fixed;
+	top:43%;
+	right:13%;
+}
+
+.nav a {
+	font-family : inherit;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* フッター */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+	.box1,.box3 {
+    	display: none;
+    }
+    .box2{
+		width:100vw;
+		height:100vh;
+    }
+    .sp{
+		width: 100vw;
+    	height: 100vh; /* ブラウザの高さに合わせる */
+    }
+}
