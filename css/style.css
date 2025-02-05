@@ -1,0 +1,1194 @@
+
+
+@import url("common.css");
+
+/* -----------------------------top画面-------------------------------- */
+/* スライドショー */
+.top-slide-container {
+	width: 100%;
+    position: relative; /*親要素にrelative*/
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.top-slide-wrapper {
+  display: flex;
+  animation: scroll-left 20s infinite linear 5s both;
+}
+
+.top-slide{
+  width: 300px;
+  object-fit:cover;
+  border: 1px solid #ddd;
+}
+
+.top-slide-wrapper::after{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, .5);
+}
+
+/* スライドショーの上に重ねるコンテンツ */
+.top-overlay-content {
+	display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%; /* 縦方向で中央揃え */
+    left: 50%; /* 横方向で中央揃え */
+    transform: translate(-50%, -50%); /* 中央位置調整 */
+    align-items: center;
+    z-index: 20; /* スライドショーの上に表示 */
+}
+
+.top-logo {
+    width: 100px; /* ロゴの幅 */
+    height: auto; /* アスペクト比を維持 */
+    max-width: 100px; /* 画像の最大幅 */
+}
+
+.top-title {
+    width: 150px; /* ロゴの幅 */
+    height: auto; /* アスペクト比を維持 */
+    max-width: 200px; /* 画像の最大幅 */
+    padding: 10px;
+}
+
+/* スライドショーが隠れないよう z-index の設定 */
+.top-slide-container {
+    z-index: 10;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.nokaiin,.kaiin{
+	display: block;
+    margin: 20px auto;     /* 上下に余白、中央揃え */
+}
+
+.top-serch-button{
+    display: block;
+    margin: 20px auto;     /* 上下に余白、中央揃え */
+    width: 100%;            /* ロゴの幅を調整 */
+    max-width: 200px; /* 画像の最大幅 */
+    height: auto;
+}
+
+.top-naiyou1-image {
+    display: block;
+    margin: 20px auto;     /* 上下に余白、中央揃え */
+    width: 100%;            /* ロゴの幅を調整 */
+    max-width: 300px; /* 画像の最大幅 */
+    height: auto;
+}
+
+.top-start-button,.top-login-button {
+	display: block;
+    margin: auto;     /* 上下に余白、中央揃え */
+    width: 100%;            /* ロゴの幅を調整 */
+    max-width: 200px; /* 画像の最大幅 */
+    height: auto;
+}
+
+.top-font-text {
+	text-align: center;
+	font-size: 15px;
+	color: #534741;	
+}
+
+/* --------- ログインフォームのスタイル ------------------------------ */
+.login-container {
+    padding: 30px;
+    border-radius: 10px;
+    justify-content: center; /* 横方向に中央揃え */
+    align-items: center;     /* 縦方向に中央揃え */
+}
+/*
+.login-screen {
+background-color: #FFF;
+padding: 30px;
+border-radius: 10px
+}
+*/
+.login-logo {
+    display: block;
+    margin: 20px auto;     /* 上下に余白、中央揃え */
+    width: 100%;            /* ロゴの幅を調整 */
+    max-width: 180px; /* 画像の最大幅 */
+    height: auto;          /* アスペクト比を維持 */
+}
+
+/* テキストとテキストボックスの横並び */
+.loginform {
+    align-items: center;     /* 縦方向に中央揃え */
+    margin-bottom: 20px;
+}
+
+.loginform label {
+	font-size: 13px;
+	display: block;
+}
+
+.loginform input {
+	/*background-color: #fcf5cf;*/
+    flex: 1;
+    padding: 8px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.login-btn {
+	margin-top: 20px;
+}
+
+.login-container button {
+	font-family : inherit;
+	height: 30%;
+	width: 40%;
+    padding: 10px;
+    background: #965b36;
+    border: none;
+    color: white;
+    cursor: pointer;
+    justify-content: center; /* 横方向に中央揃え */
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 100vh;
+    border-bottom: 5px solid #4a3030;
+}
+
+.login-container button:hover {
+    /*background: #4a3030;*/
+    margin-top: 6px;
+	border-bottom: 1px solid #4a3030;
+	color: #fff;
+}
+
+/* エラーメッセージのスタイル */
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* ----------newlogin.jsp------------------------------------------------ */
+
+.signin-container {
+    padding: 30px;
+    border-radius: 10px;
+    justify-content: center; /* 横方向に中央揃え */
+    align-items: center;     /* 縦方向に中央揃え */
+}
+
+.signin-logo{
+    display: block;
+    margin: 20px auto;     /* 上下に余白、中央揃え */
+    width: 100%;            /* ロゴの幅を調整 */
+    max-width: 180px; /* 画像の最大幅 */
+    height: auto;          /* アスペクト比を維持 */
+}
+
+.signin-form {
+    align-items: center;     /* 縦方向に中央揃え */
+    margin-bottom: 20px;
+}
+
+.signin-form label {
+	font-size: 13px;
+	display: block;
+}
+
+.signin-form input {
+	/*background-color: #fcf5cf;*/
+    flex: 1;
+    padding: 8px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.signin-btn{
+	margin-top: 20px;
+}
+
+.signin-container button {
+	font-family : inherit;
+	height: 30%;
+	width: 40%;
+    padding: 10px;
+    background: #965b36;
+    border: none;
+    color: white;
+    cursor: pointer;
+    justify-content: center; /* 横方向に中央揃え */
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 100vh;
+    border-bottom: 5px solid #4a3030;
+}
+
+.signin-container button:hover {
+    /*background: #4a3030;*/
+    margin-top: 6px;
+	border-bottom: 1px solid #4a3030;
+	color: #fff;
+}
+
+/* -----------home---------------------------------------------- */
+
+.search-container{
+	padding: 30px;
+    border-radius: 10px;
+}
+
+.home-img {
+    display: block;
+    margin: 20px auto;     /* 上下に余白、中央揃え */
+    width: 100%;            /* ロゴの幅を調整 */
+    max-width: 180px; /* 画像の最大幅 */
+    height: auto;          /* アスペクト比を維持 */
+}
+/*
+.tag-screen{
+	background-color: #FFF;
+	padding: 30px;
+	border-radius: 10px
+}
+*/
+
+.search-box{
+	display: flex;             /* 横並びにするためにflexboxを使用 */
+    flex-wrap: wrap;           /* タグが画面幅を超えたら折り返す */
+    gap: 5px;
+    margin-bottom:15px;               /* タグ間のスペース */
+    
+}
+
+.choise-list{
+	width:240px;
+	background-color: #FFF;
+	padding: 0.5em;
+	border-radius: 20px;
+	border: 3px solid #965B36;
+}
+
+#tagList {
+    display: flex;             /* 横並びにするためにflexboxを使用 */
+    flex-wrap: wrap;           /* タグが画面幅を超えたら折り返す */
+    gap: 5px;                 /* タグ間のスペース */
+}
+
+#tagList div {
+    display: inline-flex;      /* divをインラインフレックスにして横並びに */
+    align-items: center;       /* タグ名と画像を縦方向で中央揃え */
+    cursor: pointer;           /* クリック可能に見せる */
+}
+/*
+#tagList div:hover {
+    background-color: #ddd;    /* ホバー時に背景色を変更 
+}*/
+
+/*検索ボタン*/
+#sbtn2{
+  width:45px;/*横幅*/
+  height: 45px; 
+  border-radius:50%;/*右側の角を少し丸める*/ 
+  background:#965B36;/*背景カラー*/ 
+  border:none;/*枠線を消す*/ 
+  color:#fff;/*テキストカラー*/ 
+  font-size:20px;/*フォントサイズ指定*/ 
+  cursor: pointer;/*マウスを乗せると指差しポインターになる*/
+  align-items: right;
+}
+
+.tagchoice {
+	width: auto;
+    padding:10px;
+    margin:0;
+    border:0;
+    overflow:visible;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 3px solid #965B36;
+    text-align: left;
+    clear: both; 
+}
+
+.checkbox-img{
+	width:auto;/*横幅*/
+	height:30px;
+	cursor:pointer;
+}
+
+.tag-txt{
+	text-align: left;
+	font-size: 15px;
+}
+
+.home-text{
+    text-align: right;
+}
+
+.history-btn {
+	font-family : inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin:0 auto;
+    margin-bottom: 10px;
+    padding: .4em 1em;
+    border: none;
+    border-radius: 25px;
+    background-color: #965b36;
+    color: #fff;
+    font-size: 1em;
+    text-decoration:none;
+}
+
+.history-btn::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: '';
+}
+
+.history-btn:hover {
+    background-color: #864b26;
+}
+
+.bm-btn {
+	font-family : inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin:0 auto;
+    padding: .4em 1em;
+    border: none;
+    border-radius: 25px;
+    background-color: #965b36;
+    color: #fff;
+    font-size: 1em;
+    text-decoration:none;
+}
+
+.bm-btn::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: '';
+}
+
+.bm-btn:hover {
+    background-color: #864b26;
+}
+.top-btn {
+	font-family : inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin:0 auto;
+    margin-top:10px;
+    padding: .4em 1em;
+    border: none;
+    border-radius: 25px;
+    background-color: #965b36;
+    color: #fff;
+    font-size: 1em;
+    text-decoration:none;
+}
+
+.top-btn::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: '';
+}
+
+.top-btn:hover {
+    background-color: #864b26;
+}
+
+.home-footermenu {
+	position: fixed;
+	bottom: 0;
+	height: 100px;
+}
+
+/* ------------検索結果画面------------------------------------------------------------ */
+
+.result-screen{
+	padding: 30px;
+    border-radius: 10px;
+}
+
+.accordion-004 {
+    max-width: 500px;
+    margin-bottom: 7px;
+    border: 2px solid #965B36;
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+.accordion-004 summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1em 2em;
+    color: #000000;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.accordion-004 summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-004 summary::before,
+.accordion-004 summary::after {
+    width: 3px;
+    height: .9em;
+    border-radius: 5px;
+    background-color: #000000b3;
+    content: '';
+}
+
+.accordion-004 summary::before {
+    position: absolute;
+    right: 2em;
+    rotate: 90deg;
+}
+
+.accordion-004 summary::after {
+    transition: rotate .3s;
+}
+
+.accordion-004[open] summary::after {
+    rotate: 90deg;
+}
+
+.tag-box{
+	padding:10px;
+	text-align: left;
+}
+
+.heading-33 {
+    border-bottom: 3px solid #FFF0A2;
+}
+
+.heading-33 span {
+    display: inline-block;
+    position: relative;
+    padding: 0 .4em .2em;
+    color: #333333;
+}
+
+.heading-33 span::before {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #965B36;
+    content: '';
+}
+
+.shop-grp{
+	margin-bottom:20px;
+	flex-wrap: wrap;
+}
+
+.heading-8 {
+	float: left;
+    display: inline-block;
+    position: relative;
+    padding: .3em .7em;
+    border-radius: 50px 0 0 50px;
+    background-color: #965B36;
+    color: #fff;
+    
+}
+
+.heading-8::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 13px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.result-img{
+	width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    border: 3px solid #965B36;
+}
+
+/* ------------検索detail画面------------------------------------------------------------ */
+
+.detail-screen{
+	padding: 5%;
+    border-radius: 10px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+
+.carousel-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-container button.prev {
+    left: 10px;
+}
+
+.carousel-container button.next {
+    right: 10px;
+}
+
+.carousel-container button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.cafe-info-box{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cafe-info{
+	padding: 5%;
+	text-align: left;
+}
+
+.cafe-info label{
+	font-size: 15px;
+}
+
+.cafe-info-open{
+	white-space: normal;
+	overflow-wrap: normal;
+}
+
+.cafe-info-address{
+	white-space: normal;
+	overflow-wrap: normal;
+}
+
+.cafe-info-name{
+	margin: 0;
+}
+
+#tags-container{
+	align-items: left; /* 左寄せ */
+	white-space:normal;
+	vertical-align: top;
+}
+
+/* タグアイテムのサイズ */
+.tag-item {
+  height: 30px;  /* 高さを28pxに設定 */
+  width: auto;
+  margin: 3px;   /* タグアイテム同士の間隔 */
+  display: inline-block; /* 横並びに配置 */
+}
+
+/* 画像のサイズ */
+.tag-item img {
+	width:auto;/*横幅*/
+	height:30px;
+	cursor:pointer;
+}
+
+.bm-in-img{
+	width:40px;
+	height:auto;
+}
+
+.bm-in-btn{
+	width:40px;
+	height:auto;
+	background-color:#FFF0A2;
+	cursor: pointer; /* マウスポインタを変更する */
+	border:none;
+	text-align: left;
+}
+
+.review{
+	padding: 1em;
+}
+
+.cmt-box{
+	width: auto;
+    padding:15px;
+    margin:0;
+    border:0;
+    overflow:visible;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 3px solid #965B36;
+    text-align: left;
+}
+
+.cmt-box p {
+	margin: 5px;
+}
+
+.my-cmt-box{
+	
+}
+
+.my-ta{
+    border: none;
+    outline: none;
+    
+}
+
+.cmt-box-ta{
+	display:flex;
+	border-bottom: 2px solid #965B36;
+    padding: 5px 10px;
+    margin-bottom: 1em;
+}
+
+.rating{
+	background-color: #FFF0A2;
+	border-radius: 10px;
+	border: 3px solid #965B36;
+}
+
+#comment{
+	width: 100%;
+	font-size: 15px;
+	resize: none;
+}
+
+.cmt-up-btn{
+	font-family : inherit;
+	width: 70px;
+	background-color:#FFF0A2;
+	cursor: pointer; /* マウスポインタを変更する */
+	border-radius: 10px;
+	border:3px solid #965B36;
+}
+
+.avg-rating{
+	margin-bottom:1em;
+}
+
+.cmt-see-box{
+	display: flex;
+    flex-direction:column;
+	border-bottom: 2px solid #eeeeee;
+	margin-bottom:1em;
+}
+
+cmt-user{
+	font-size: 12px;
+	font-weight: bold;
+}
+
+cmt-rating{
+	font-size: 13px;
+}
+
+cmt-comment{
+	text-align: left;
+	font-size: 1em;
+}
+
+.review{
+	padding: 1em;
+}
+
+.cp_box1 {
+  position: relative;
+}
+.cp_box1 input {
+  display: none;
+}
+/*開くためのボタンとテキストを隠すグラデーションの設定*/
+.cp_box1 label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  bottom: -10px;
+  width: 100%;
+  height: 140px; /* グラデーションの高さ */
+  cursor: pointer;
+  text-align: center;
+  /* 以下グラデーション*/
+  background: linear-gradient(to bottom, rgba(250, 252, 252, 0) 0%, #fff 90%);
+}
+/* 開いた時にグラデーションを消す */
+.cp_box1 input:checked + label {
+  background: inherit;
+}
+.cp_box1 input:checked + label {
+  /* display: none ; 閉じるボタンを消す場合コメントアウトを外す */
+}
+.cp_box1 .cp_container {
+  overflow: hidden;
+  height: 100px; /* 開く前に見えている部分の高さ */
+  transition: all 0.5s;
+}
+/*続きをよむボタン*/
+.cp_box1 label:after,
+.cp_box1 label::before {
+  content: '';
+  position: absolute;
+  line-height: 2.5rem;
+}
+.cp_box1 label:after {
+  z-index: 2;
+  bottom: 20px;
+  width: 13em;
+  content: 'すべて表示';
+  color: #ffffff;
+  background: #965B36;
+  border-radius: 20px;
+}
+.cp_box1 label::before {
+  position: absolute;
+  bottom: 38px;
+  left: calc(50% - 3.5em);
+  z-index: 3;
+  width: 10px;
+  height: 5px;
+  background: #ffffff;
+  clip-path: polygon(50% 100%, 0 0, 100% 0)
+}
+/*閉じるボタン*/
+.cp_box1 input:checked + label:after {
+  content: '閉じる';
+}
+.cp_box1 input:checked + label:before {
+  left: calc(50% - 2.5em);
+  transform: scale(1, -1);
+}
+.cp_box1 input:checked ~ .cp_container {
+  height: auto;
+  padding-bottom: 80px; /* 閉じるボタンのbottomからの位置 */
+  transition: all 0.5s;
+}
+.map-img{
+	width: 100px; /* 幅を200pxに設定 */
+	  height: auto; /* 高さは自動調整 */
+	  float: right; /* 右寄せ */
+	  /*border-radius: 10px;  オプション: 角を丸くする */
+}
+
+
+/* ------------------bookmark------------------------------------------------------------ */
+
+.delete-btn{
+	font-family : inherit;
+	border: 3px solid #965B36;
+	background-color:#fff;
+	color:black;
+	border-radius: 10px; /* 角丸をつける */
+	padding: 5px 10px; /* ボタンの内側の余白 */
+	text-align: center; /* ボタンのテキストを中央揃えにする */
+	text-decoration: none; /* テキストに下線をつけない */
+	font-size: 12px; /* テキストのフォントサイズ */
+	font-weight:bold;
+	cursor: pointer; /* マウスポインタを変更する */
+}
+
+
+/* -----------------------------ゆりか編集MyProfile.jsp画面-------------------------------- */
+/*枠デザイン*/
+.profile_box {
+margin: 2em 0;
+border-left: solid 2px #965B36;
+border-right: solid 2px #965B36;
+border-bottom: solid 10px #965B36;
+border-radius: 10px;
+background: #ffffff; /*タイトルの背景色*/
+margin: 30px;
+
+}
+.profile_box .box-title {
+font-size: 18px;
+line-height:1.8;
+background: #965B36; /*タイトルの背景色*/
+padding: 4px;
+text-align: center;
+color: #FFF; /*文字色*/
+font-weight: bold;
+letter-spacing: 0.05em;
+border-radius: 10px 10px 0 0;
+}
+/*内容*/
+.profile_center{
+text-align: center;
+margin: 10px;
+}
+/*プロフィール画像*/
+.profile_figure {
+width:150px;
+height:150px;
+border-radius: 50%; /*丸くする*/
+border: solid 3px #f2d0cb; /*枠線*/
+}
+/*名前*/
+.profile_name {
+padding: 15px 20px;
+font-weight:bold;
+font-size:16px;
+}
+/*自己紹介文*/
+.profile_box p {
+padding: 15px 20px;
+margin: 0;
+}
+/*リスト*/
+.profile_box ul {
+padding: 0.5em 1em 0.5em 2.3em;
+position: relative;
+}
+.profile_box ul li {
+line-height: 1.5;
+padding: 0.5em 0;
+list-style-type: none!important;
+}
+.profile_box ul li:before {
+font-family: "Font Awesome 5 Free";
+content: "f101";/*アイコンの種類*/
+font-weight:900;
+position: absolute;
+left : 1em;/*左端からのアイコンまでの距離*/
+color: #ff7d6e;/*アイコン色*/
+}
+
+.hensyu {
+	font-family : inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin:0 auto;
+    margin-bottom: 10px;
+    padding: .4em 1em;
+    border: none;
+    border-radius: 25px;
+    background-color: #965b36;
+    color: #fff;
+    font-size: 1em;
+    text-decoration:none;
+}
+
+.hensyu::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: '';
+}
+
+.hensyu:hover {
+    background-color: #864b26;
+}
+
+.sakujo{
+	font-family : inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin:0 auto;
+    margin-top:10px;
+    padding: .4em 1em;
+    border: none;
+    border-radius: 25px;
+    background-color: #965b36;
+    color: #fff;
+    font-size: 1em;
+    text-decoration:none;
+}
+
+.sakujo::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: '';
+}
+
+.sakujo:hover {
+    background-color: #864b26;
+}
+
+/* -----------------------------ゆりか編集UpdateProfile.jsp画面2-------------------------------- */
+.update{
+	font-family : inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin:10 auto;
+    padding: .4em 1em;
+    border: none;
+    border-radius: 25px;
+    background-color: #965b36;
+    color: #fff;
+    font-size: 1em;
+    text-decoration:none;
+}
+
+.update::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: '';
+}
+
+.update:hover {
+    background-color: #864b26;
+}
+.logout{
+	font-family : inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin:0 auto;
+    padding: .4em 1em;
+    border: none;
+    border-radius: 25px;
+    background-color: #965b36;
+    color: #fff;
+    font-size: 1em;
+    text-decoration:none;
+}
+
+.logout::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: '';
+}
+
+.logout:hover {
+    background-color: #864b26;
+}
+#comment{
+	margin-bottom:10;
+	padding: .3em;
+}
+
+.plofile-delete-screen{
+	padding: 30px;
+    border-radius: 10px;
+}
+
+.plofile-delete-text{
+	padding: 20px;
+}
+
+/* --------- ゆりか編集会員登録フォーム（newlogin.jsp） ------------------------------ */
+.newlogin-container {
+    padding: 30px;
+    border-radius: 10px;
+    justify-content: center; /* 横方向に中央揃え */
+    align-items: center;     /* 縦方向に中央揃え */
+}
+/*
+.login-screen {
+background-color: #FFF;
+padding: 30px;
+border-radius: 10px
+}
+*/
+
+.signin-logo{
+    display: block;
+    margin: 20px auto;     /* 上下に余白、中央揃え */
+    width: 100%;            /* ロゴの幅を調整 */
+    max-width: 180px; /* 画像の最大幅 */
+    height: auto;          /* アスペクト比を維持 */
+}
+
+/* テキストとテキストボックスの横並び */
+.newloginform {
+    align-items: center;     /* 縦方向に中央揃え */
+    margin-bottom: 3px;
+}
+
+.newloginform label {
+	font-size: 13px;
+	display: block;
+}
+
+.newloginform input {
+	/*background-color: #fcf5cf;*/
+    flex: 1;
+    padding: 8px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.newlogin-btn {
+	margin-top: 20px;
+}
+
+.newlogin-container button {
+	font-family : inherit;
+	height: 30%;
+	width: 40%;
+    padding: 10px;
+    background: #965b36;
+    border: none;
+    color: white;
+    cursor: pointer;
+    justify-content: center; /* 横方向に中央揃え */
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 100vh;
+    border-bottom: 5px solid #4a3030;
+}
+
+.newlogin-container button:hover {
+    /*background: #4a3030;*/
+    margin-top: 6px;
+	border-bottom: 1px solid #4a3030;
+	color: #fff;
+}
+span.newlogin-title{
+font-family: 'Impact',sans-serif;
+font-size: 50px;
+color: #5B4135;
+display: block;
+}
+/* --------- ゆりか編集（ShopSearchResult.jsp） ------------------------------ */
+#page_top{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 580px;
+  bottom: 10px;
+  background: #965b36;
+  opacity: 0.6;
+  border-radius: 50%;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f0d8';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -5px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+/* --------- 岩井編集（ShopSearchResult.jsp） ------------------------------ */
+
+.c-form-text {
+    height: 2.4em;
+    width: 100%;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 0 1px #ccc inset;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.c-form-text:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px #965B36 inset;
+}
+.c-comment-text {
+    height: 4.8em;
+    width: 100%;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 0 1px #ccc inset;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.c-comment-text:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px #965B36 inset;
+}
+
